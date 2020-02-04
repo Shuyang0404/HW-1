@@ -11,20 +11,19 @@ function setup() {
 
 function draw() {
   background(255);
-  line(mouseX, 0, mouseX, 100);
 
-  if (dist(mouseX, mouseY, x, y) > radius) {
+  if (dist(mouseX, mouseY, x, y) < radius) {
     if (mouseIsPressed) {
-      x = mouseX;
-      y = mouseY;
+      x = random(width);
+      y = random(height);
     }
-    fill(175, 100, 220);
+    fill(255, 200, 200, 200);
   }
   else {
-    fill(20, 75, 200);
+    fill(255, 220, 200, 200);
   }
 
   ellipse(x, y, radius * 2);
-  x += random(-5, 5);
-  y += random(-5, 5);
+  x += random(-1, 1);
+  y += random(-1, 1);
 }
